@@ -1,0 +1,5 @@
+model_checkpoint_path: "FFTNet-12"
+all_model_checkpoint_paths: "FFTNet-5"
+all_model_checkpoint_paths: "FFTNet-6"
+all_model_checkpoint_paths: "FFTNet-10"
+all_model_checkpoint_paths: "FFTNet-12"
