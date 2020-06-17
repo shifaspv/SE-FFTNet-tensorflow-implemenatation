@@ -1,4 +1,4 @@
-SE-FFTNet <a href="https:https://www.isca-speech.org/archive/Interspeech_2019/pdfs/2622.pdf"> [1] </a> is an end-to-end speech 
+SE-FFTNet <a href="https://arxiv.org/abs/2006.04469"> [1] </a> is an end-to-end speech 
 enhancement model that, in contrast to the SE-WaveNet <a href="https://arxiv.org/abs/1706.07162"> [2] </a>
 SEGAN <a href="https://arxiv.org/abs/1703.09452"> [3] </a> models, employs a different dilattion pattern to extract features, which has been shown important to model the statistical dissimilarity between the speech and noise effectively. The model uses wider dilation at the begining layers which then decreases towards the depth. Through this new dilation pattern, the model has achieved a far better enhancement compared to the SE-WaveNet wile having very lesser number of parameters.
 
