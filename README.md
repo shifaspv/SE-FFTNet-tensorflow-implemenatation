@@ -12,7 +12,7 @@ Tensorflow - 1.14.0 <br>
 
 We required few more very common Python packages, check the ```required.txt``` file and install if you don't have.
 ## Data set
-The model displayed was trained on the data sett from <a href="https://datashare.is.ed.ac.uk/handle/10283/1942">here</a>. 
+The model displayed was trained on the data set from <a href="https://datashare.is.ed.ac.uk/handle/10283/1942">here</a>. 
 
 Extract data to the ```./data/NSDTSEA``` folder
 
