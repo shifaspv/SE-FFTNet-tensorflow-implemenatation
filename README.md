@@ -1,6 +1,6 @@
 SE-FFTNet <a href="https:https://www.isca-speech.org/archive/Interspeech_2019/pdfs/2622.pdf"> [1] </a> is an end-to-end speech 
-enhancement model that contrasting to the SE-WaveNet <a href="https://arxiv.org/abs/1706.07162"> [2] </a>
-SEGAN <a href="https://arxiv.org/abs/1703.09452"> [3] </a> employs a new dilattion pattern
+enhancement model that in contrast to the SE-WaveNet <a href="https://arxiv.org/abs/1706.07162"> [2] </a>
+SEGAN <a href="https://arxiv.org/abs/1703.09452"> [3] </a> models employs a new dilattion pattern
 that has been shown very important to model the statistical charateristics of speech and noise effectively. to model 
 suggested in <a href="https://www.isca-speech.org/archive/Interspeech_2018/pdfs/2119.pdf"> 
 this paper</a>, where we have suggested a neural speech enrichment approach for intelligibility improvement in noise. 
