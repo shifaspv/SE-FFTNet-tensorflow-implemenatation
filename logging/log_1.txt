@@ -1,0 +1,111 @@
+Training of FFTNet started at: 2020-06-10, 12-48-49 using Tensorflow.
+
+Configuration file: ../config/config_params.json
+{
+    "data_dir"                 : "../data/NSDTSEA/",
+    "train_file_list"          : "train_id_list.txt",
+    "valid_file_list"          : "valid_id_list.txt", 
+    "use_dropout"              : false,  
+    "train_clean_audio_dir"    : "clean_trainset_wav",
+    "train_noisy_audio_dir"    : "noisy_trainset_wav",   
+    "valid_clean_audio_dir"    : "clean_testset_wav",
+    "valid_noisy_audio_dir"    : "noisy_testset_wav",
+    "test_clean_audio_dir"     : "clean_testset_wav",
+    "test_noisy_audio_dir"     : "noisy_testset_wav",  
+    "audio_ext"                : ".wav",
+    "sample_rate"              : 16000,   
+     
+    "queue_size"               : 128,
+    "permute_segments"         : true,
+    "base_dir"                 : "..",
+    "output_dir"               : "output",
+    "saved_models_dir"         : "saved_models",
+    "logging_dir"              : "logging",
+    "model_ids"                : "model_ids.txt",
+
+    "n_channels"               : 256, 
+    "dilations"                :[512,256,128,64,32,16,8,4,2,1,
+				512,256,128,64,32,16,8,4,2,1,
+				512,256,128,64,32,16,8,4,2,1],
+    "target_length"            : 4096,
+    "input_length"             :0,
+    "filter_length"            : 3,
+    "use_biases"               : {"causal_layer":true, "bias":false, "bias_block":false, "FC_layer":false
+                                },
+    "zero_pad_percentage"      : 0.25,
+    "regain"                   : 0.06,
+    "extract_voice"            : true, 
+    "remove_silence"           : true, 
+    "silence_threshold"        : 0.09,
+
+    "L2_regularization"        : 0, 
+
+    "loss"                     : { "out_1": { "l1": 1, "l2": 0, "weight": 1 }
+                                   },
+    "n_early_stop_epochs"      : 10,
+    "n_epochs"                 : 100,       
+    "batch_size"               : 10,
+    "learning_rate_method"     : "exponential",
+    "optimization_algorithm"   : "adam", 
+    "optimization_parameters"  : "optim_wavenet.json",
+    "use_ema"                  : false,
+    "polyak_decay"             : 0.9995,
+
+    "CUDA_VISIBLE_DEVICES"     : "0"
+}
+
+
+Optimization parameters file: ../config/optim_wavenet.json
+adam
+{
+    "learning_rate_method":{
+        "constant"          : {"learning_rate":0.001},
+        "exponential"       : {"learning_rate":0.001, "decay_steps":20000, "decay_rate":0.99, "staircase":false},
+        "natural_exp"       : {"learning_rate":0.001, "decay_steps":100000, "decay_rate":0.99, "staircase":false},
+        "inverse_time"      : {"learning_rate":0.001, "decay_steps":100000, "decay_rate":0.99, "staircase":false},
+        "piecewise_constant": {"boundaries":[5000, 10000, 20000], "values":[0.002, 0.001, 0.0005, 0.0001]},
+        "polynomial"        : {"learning_rate":0.001, "decay_steps":100000, "end_learning_rate":0.0001, "power":1.0, "cycle":false} 
+    },
+
+    "optimization_algorithm":{
+        "sgd"     : {}, 
+        "momentum": {"momentum":0.9, "use_nesterov":true}, 
+        "adadelta": {"rho":0.95, "epsilon":1e-08},
+        "adagrad" : {"initial_accumulator_value":0.1},
+        "rmsprop" : {"decay":0.9, "momentum":0.3, "epsilon":1e-10, "centered":true},
+        "adam"    : {"beta1":0.9, "beta2":0.999, "epsilon":1e-08} 
+    }
+}
+
+
+Epoch=1, Train: 0.07332255831305957, Valid: 0.006187611063314455, Time=4844.422390937805
+Best epoch=1
+Epoch=2, Train: 0.009578293315645284, Valid: 0.005841861297167168, Time=4834.49189043045
+Best epoch=2
+Epoch=3, Train: 0.008882590540758377, Valid: 0.0054301767233298735, Time=4824.917445898056
+Best epoch=3
+Epoch=4, Train: 0.008443147081196149, Valid: 0.00548855435453732, Time=4811.410452842712
+Epoch=5, Train: 0.008148058083700631, Valid: 0.005255407541257779, Time=4815.487919330597
+Best epoch=5
+Epoch=6, Train: 0.007973943273538934, Valid: 0.005173967123748421, Time=4813.187505245209
+Best epoch=6
+Epoch=7, Train: 0.00782758433389185, Valid: 0.005291229204845018, Time=4814.97646021843
+Epoch=8, Train: 0.007735872240114173, Valid: 0.005234448297414929, Time=4814.5578734874725
+Epoch=9, Train: 0.007657846135672789, Valid: 0.005226629372853576, Time=4817.420980930328
+Epoch=10, Train: 0.007608077586937188, Valid: 0.005140776995156127, Time=4818.172894001007
+Best epoch=10
+Epoch=11, Train: 0.007585160656269056, Valid: 0.005277939250671796, Time=4825.5543785095215
+Epoch=12, Train: 0.007549839779065021, Valid: 0.005098835813022857, Time=4826.149478673935
+Best epoch=12
+Epoch=13, Train: 0.0075366547040892126, Valid: 0.005172245958532217, Time=4826.8074424266815
+Epoch=14, Train: 0.00752683231601831, Valid: 0.005293283489888555, Time=4825.466310501099
+Epoch=15, Train: 0.007525615882842266, Valid: 0.0051798330504823934, Time=4826.077486038208
+Epoch=16, Train: 0.007526197974920499, Valid: 0.00515288702314301, Time=4825.359367132187
+Epoch=17, Train: 0.007523334412760265, Valid: 0.005591998561520883, Time=4826.340019464493
+Epoch=18, Train: 0.007521143538279874, Valid: 0.005391629523299425, Time=4826.594699144363
+Epoch=19, Train: 0.0075365943917332, Valid: 0.005185272282360938, Time=4824.024132013321
+Epoch=20, Train: 0.00753319598108709, Valid: 0.005136269687549368, Time=4823.558091878891
+Epoch=21, Train: 0.0075322883590353135, Valid: 0.005244318287939963, Time=4824.376006603241
+Epoch=22, Train: 0.007532626016747224, Valid: 0.005309376214876813, Time=4824.013085603714
+Epoch=23, Train: 0.007543034489442949, Valid: 0.005300085911830741, Time=4821.136980056763
+Total time = 110938.93479728699
