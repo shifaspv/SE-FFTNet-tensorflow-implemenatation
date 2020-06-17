@@ -1,0 +1,53 @@
+{
+    "data_dir"                 : "../data/NSDTSEA/",
+    "train_file_list"          : "train_id_list.txt",
+    "valid_file_list"          : "valid_id_list.txt", 
+    "use_dropout"              : false,  
+    "train_clean_audio_dir"    : "clean_trainset_wav",
+    "train_noisy_audio_dir"    : "noisy_trainset_wav",   
+    "valid_clean_audio_dir"    : "clean_testset_wav",
+    "valid_noisy_audio_dir"    : "noisy_testset_wav",
+    "test_clean_audio_dir"     : "clean_testset_wav",
+    "test_noisy_audio_dir"     : "noisy_testset_wav",  
+    "audio_ext"                : ".wav",
+    "sample_rate"              : 16000,   
+     
+    "queue_size"               : 128,
+    "permute_segments"         : true,
+    "base_dir"                 : "..",
+    "output_dir"               : "output",
+    "saved_models_dir"         : "saved_models",
+    "logging_dir"              : "logging",
+    "model_ids"                : "model_ids.txt",
+
+    "n_channels"               : 256, 
+    "dilations"                : [512,256,128,64,32,16,8,4,2,1,
+				  512,256,128,64,32,16,8,4,2,1,
+				  512,256,128,64,32,16,8,4,2,1],
+    "target_length"            : 4096,
+    "input_length"             : 0,
+    "filter_length"            : 3,
+    "use_biases"               : {"causal_layer":true, "bias":false, "bias_block":false, "FC_layer":false
+                                 },
+    "zero_pad_percentage"      : 0.25,
+    "regain"                   : 0.06,
+    "extract_voice"            : true, 
+    "remove_silence"           : true, 
+    "silence_threshold"        : 0.09,
+
+    "L2_regularization"        : 0, 
+
+    "loss"                     : { "out_1": { "l1": 1, "l2": 0, "weight": 1 }
+                                 },
+    "n_early_stop_epochs"      : 7,
+    "n_epochs"                 : 100,       
+    "batch_size"               : 10,
+    "learning_rate_method"     : "exponential",
+    "optimization_algorithm"   : "adam", 
+    "optimization_parameters"  : "optim_wavenet.json",
+    "use_ema"                  : false,
+    "polyak_decay"             : 0.9995,
+
+    "CUDA_VISIBLE_DEVICES"     : "0"
+}
+

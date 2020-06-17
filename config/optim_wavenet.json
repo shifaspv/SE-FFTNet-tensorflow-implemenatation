@@ -1,0 +1,19 @@
+{
+    "learning_rate_method":{
+        "constant"          : {"learning_rate":0.001},
+        "exponential"       : {"learning_rate":0.001, "decay_steps":20000, "decay_rate":0.99, "staircase":false},
+        "natural_exp"       : {"learning_rate":0.001, "decay_steps":100000, "decay_rate":0.99, "staircase":false},
+        "inverse_time"      : {"learning_rate":0.001, "decay_steps":100000, "decay_rate":0.99, "staircase":false},
+        "piecewise_constant": {"boundaries":[5000, 10000, 20000], "values":[0.002, 0.001, 0.0005, 0.0001]},
+        "polynomial"        : {"learning_rate":0.001, "decay_steps":100000, "end_learning_rate":0.0001, "power":1.0, "cycle":false} 
+    },
+
+    "optimization_algorithm":{
+        "sgd"     : {}, 
+        "momentum": {"momentum":0.9, "use_nesterov":true}, 
+        "adadelta": {"rho":0.95, "epsilon":1e-08},
+        "adagrad" : {"initial_accumulator_value":0.1},
+        "rmsprop" : {"decay":0.9, "momentum":0.3, "epsilon":1e-10, "centered":true},
+        "adam"    : {"beta1":0.9, "beta2":0.999, "epsilon":1e-08} 
+    }
+}
