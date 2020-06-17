@@ -12,9 +12,11 @@ Tensorflow - 1.14.0 <br>
 
 We required few more very common Python packages, check the ```required.txt``` file and install if you don't have.
 ## Data set
-The model displayed on the paper was trained on the manually created data set with clean speech from <a href="https://datashare.is.ed.ac.uk/handle/10283/1942">here</a>. The model training was done with the intelligibility improved samples from SSDRC model as target, since don't have the right to publish that code, you may please use your own target samples.
+The model displayed was trained on the data sett from <a href="https://datashare.is.ed.ac.uk/handle/10283/1942">here</a>. 
 
-Then, generate the lists of wave files ID for training and tessting using the ```./data/generate_wave_id_list.py```, and confirm that the names match to the ones in ```./config/config_params.json```
+Extract data to the ```./data/NSDTSEA``` folder
+
+You may use ```./data/generate_wave_id_list.py``` script to generate training and testing ID lists if you are using a different data set, and confirm that the names match to the ones in ```./config/config_params.json```
 
 ## Description of the ```./config/config_params.json``` file variables
 <table>
