@@ -75,7 +75,7 @@ Trained models will be saved to the ```./saved_models``` directory
 ## Testing the model
 
 You can use the trained model in ```./saved_model``` directory, or your own trained model.
-Go to the ```./src``` folder, and compile the ```generate.sh``` file with first argument as the the id of the saved model, like 1 or 2 ..
+Go to the ```./src``` folder, and compile the ```generate.sh``` file with first argument as the ID of the saved model, like 1 or 2 ..
 
 ```
 ./generate.sh model_id
