@@ -81,8 +81,8 @@ Go to the ```./src``` folder, and compile the ```generate.sh``` file with first 
 ./generate.sh model_id
 ```
 
-A new folder named ```./outputs/saved_model_id``` will be created and saved the output sample.
-User can manually edit the wave file ID inside the ```generate.sh```, to generate over multiple files.
+A new folder named ```./outputs/model_id``` will be created and saved the output sample.
+User must manually edit the wave file ID inside the ```generate.sh```, to automatically read from the test set.
 
 
 
